@@ -1,6 +1,4 @@
 ﻿using System.Data.Entity;
-
-using System.Data.Entity;
 using SmartShift.Core.Model.Entities;
 
 namespace SmartShift.Core.Data.Context
@@ -9,8 +7,8 @@ namespace SmartShift.Core.Data.Context
     {
         public AppDbContext() : base("DefaultConnection") { }
 
-        public DbSet<UserModel> Users { get; set; }
-        public DbSet<CompanyModel> Companies { get; set; }
+        public DbSet<UserModel> UserModel { get; set; }
+        public DbSet<CompanyModel> CompanyModel { get; set; }
 
         // other DbSet<> will come later
     }

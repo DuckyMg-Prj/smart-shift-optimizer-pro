@@ -41,17 +41,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="Interface\IAuthService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\SmartShift.Core.Service\SmartShift.Core.Service.csproj">
-      <Project>{cb644b02-2983-46d9-90f0-39e63b3639e1}</Project>
-      <Name>SmartShift.Core.Service</Name>
+    <ProjectReference Include="..\SmartShift.Core.Model\SmartShift.Core.Model.csproj">
+      <Project>{0da330f0-6f19-4732-af62-1148777f099c}</Project>
+      <Name>SmartShift.Core.Model</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

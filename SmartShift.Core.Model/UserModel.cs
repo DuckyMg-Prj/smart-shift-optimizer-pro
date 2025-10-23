@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SmartShift.Core.Model.Enums;
+using System;
 
 namespace SmartShift.Core.Model.Entities
 {
