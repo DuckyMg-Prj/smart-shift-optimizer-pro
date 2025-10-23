@@ -1,4 +1,5 @@
 ﻿using SmartShift.Core.Model.DTOs;
+using SmartShift.Core.Model.DTOs.Company;
 using SmartShift.Core.Model.Enums;
 using SmartShift.Core.Service.Abstraction;
 using SmartShift.Ui.Api.Resourcess;

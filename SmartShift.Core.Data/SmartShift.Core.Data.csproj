@@ -64,6 +64,10 @@
     <Compile Include="Migrations\202510231555574_Day3Company.Designer.cs">
       <DependentUpon>202510231555574_Day3Company.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202510231811021_AddShiftEntity.cs" />
+    <Compile Include="Migrations\202510231811021_AddShiftEntity.Designer.cs">
+      <DependentUpon>202510231811021_AddShiftEntity.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -86,6 +90,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202510231555574_Day3Company.resx">
       <DependentUpon>202510231555574_Day3Company.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202510231811021_AddShiftEntity.resx">
+      <DependentUpon>202510231811021_AddShiftEntity.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -136,4 +136,24 @@
     <value>ユーザー様、ユーザーロールが無効です。
 </value>
   </data>
+  <data name="sShift_CreateShift_InvalidUserRole" xml:space="preserve">
+    <value>お客様各位、ユーザーIDが見つかりません
+</value>
+  </data>
+  <data name="sShift_CreateShift_EndDateLowerThanStart" xml:space="preserve">
+    <value>お客様各位、終了日時は開始日時よりも大きくなければなりません</value>
+  </data>
+  <data name="sShift_CreateShift_ShiftOverLap" xml:space="preserve">
+    <value>ユーザー様、シフトが既存のシフトと重複しています</value>
+  </data>
+  <data name="sShift_CreateShift_NotMemberCompany" xml:space="preserve">
+    <value>お客様各位、あなたはその会社のメンバーではありません</value>
+  </data>
+  <data name="sShift_UpdateShift_ShiftNotFound" xml:space="preserve">
+    <value>ユーザー様、シフトが見つかりません</value>
+  </data>
+  <data name="sShift_UpdateShift_NoAccess" xml:space="preserve">
+    <value>ユーザー様、シフトを編集する権限がありません
+</value>
+  </data>
 </root>

@@ -41,24 +41,29 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DTOs\UserProfileDto.cs" />
-    <Compile Include="DTOs\CompanyJoinDto.cs" />
-    <Compile Include="DTOs\CompanyDto.cs" />
-    <Compile Include="DTOs\CompanyCreateDto.cs" />
+    <Compile Include="DTOs\Users\Shift\ShiftDto.cs" />
+    <Compile Include="DTOs\Users\Shift\ShiftQueryDto.cs" />
+    <Compile Include="DTOs\Users\Shift\ShiftUpdateDto.cs" />
+    <Compile Include="DTOs\Users\Shift\ShiftCreateDto.cs" />
+    <Compile Include="DTOs\Users\UserProfileDto.cs" />
+    <Compile Include="DTOs\Company\CompanyJoinDto.cs" />
+    <Compile Include="DTOs\Company\CompanyDto.cs" />
+    <Compile Include="DTOs\Company\CompanyCreateDto.cs" />
     <Compile Include="DTOs\TokenRequest.cs" />
-    <Compile Include="RefreshToken.cs" />
-    <Compile Include="CompanyModel.cs" />
-    <Compile Include="DTOs\LoginDto.cs" />
+    <Compile Include="Entities\Shift.cs" />
+    <Compile Include="Entities\RefreshToken.cs" />
+    <Compile Include="Entities\CompanyModel.cs" />
+    <Compile Include="DTOs\Users\LoginDto.cs" />
     <Compile Include="ExceptionLevel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="DTOs\RegisterDto.cs" />
+    <Compile Include="DTOs\Users\RegisterDto.cs" />
     <Compile Include="Enums\RoleTypeKind.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="UserModel.cs" />
+    <Compile Include="Entities\UserModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -66,5 +71,6 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

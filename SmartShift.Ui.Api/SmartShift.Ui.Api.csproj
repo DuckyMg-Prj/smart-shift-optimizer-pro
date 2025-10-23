@@ -243,6 +243,7 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\SampleDirection.cs" />
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
+    <Compile Include="Controllers\ShiftController.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="Controllers\AuthController.cs" />
     <Compile Include="Controllers\CompanyController.cs" />
@@ -355,7 +356,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
-    <Folder Include="Views\User\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\SmartShift.Core.Data\SmartShift.Core.Data.csproj">

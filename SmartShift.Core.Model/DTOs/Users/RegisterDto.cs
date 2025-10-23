@@ -1,6 +1,6 @@
 ﻿using SmartShift.Core.Model.Enums;
 
-namespace SmartShift.Core.Model.DTOs
+namespace SmartShift.Core.Model.DTOs.Users
 {
     public class RegisterDto
     {

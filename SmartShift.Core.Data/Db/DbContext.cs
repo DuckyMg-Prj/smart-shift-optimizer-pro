@@ -11,7 +11,7 @@ namespace SmartShift.Core.Data.Context
         public DbSet<CompanyModel> CompanyModel { get; set; }
 
         public DbSet<RefreshToken> RefreshTokens { get; set; }
+        public DbSet<Shift> Shifts { get; set; }
 
-        // other DbSet<> will come later
     }
 }

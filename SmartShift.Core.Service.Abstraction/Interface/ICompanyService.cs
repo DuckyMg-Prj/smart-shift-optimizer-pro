@@ -1,4 +1,5 @@
 ﻿using SmartShift.Core.Model.DTOs;
+using SmartShift.Core.Model.DTOs.Company;
 using SmartShift.Core.Model.Entities;
 using System.Collections.Generic;
 namespace SmartShift.Core.Service.Abstraction

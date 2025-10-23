@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Web.Http;
 using SmartShift.Core.Model.DTOs;
+using SmartShift.Core.Model.DTOs.Users;
 using SmartShift.Core.Service.Abstraction;
 using SmartShift.Ui.Api.Resourcess;
 namespace SmartShift.Ui.Api.Controllers

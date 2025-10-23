@@ -1,4 +1,6 @@
-﻿namespace SmartShift.Core.Model.DTOs
+﻿
+
+namespace SmartShift.Core.Model.DTOs.Users
 {
     public class LoginDto
     {

@@ -135,4 +135,16 @@
   <data name="cCompany_Join_RegisterSuccess" xml:space="preserve">
     <value>Dear User , Join Company Is Successful</value>
   </data>
+  <data name="cShift_Create_RegisterSuccess" xml:space="preserve">
+    <value>Dear User ,Shift Created Successfully</value>
+  </data>
+  <data name="cShift_Delete_CanNotDelete" xml:space="preserve">
+    <value>Dear User ,Shift Can Not Be Deleted</value>
+  </data>
+  <data name="cShift_Delete_RegisterSuccess" xml:space="preserve">
+    <value>Dear User ,Shift Deleted Successfully</value>
+  </data>
+  <data name="cShift_Update_RegisterSuccess" xml:space="preserve">
+    <value>Dear User ,Shift Updated Successfully</value>
+  </data>
 </root>

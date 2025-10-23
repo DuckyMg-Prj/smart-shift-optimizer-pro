@@ -104,5 +104,59 @@ namespace SmartShift.Core.Service.Resourcess {
                 return ResourceManager.GetString("sCompanyService_CreateCompany_MissingCompanyName", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Dear User, End Date Time Must Bigger than Start Date Time .
+        /// </summary>
+        internal static string sShift_CreateShift_EndDateLowerThanStart {
+            get {
+                return ResourceManager.GetString("sShift_CreateShift_EndDateLowerThanStart", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Dear User, User Id Don&apos;t be Found.
+        /// </summary>
+        internal static string sShift_CreateShift_InvalidUserRole {
+            get {
+                return ResourceManager.GetString("sShift_CreateShift_InvalidUserRole", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Dear User ,You are not a member of that company.
+        /// </summary>
+        internal static string sShift_CreateShift_NotMemberCompany {
+            get {
+                return ResourceManager.GetString("sShift_CreateShift_NotMemberCompany", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Dear User ,Shift overlaps an existing shift.
+        /// </summary>
+        internal static string sShift_CreateShift_ShiftOverLap {
+            get {
+                return ResourceManager.GetString("sShift_CreateShift_ShiftOverLap", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Dear User ,You Don&apos;t Have Permission To Edit Shift.
+        /// </summary>
+        internal static string sShift_UpdateShift_NoAccess {
+            get {
+                return ResourceManager.GetString("sShift_UpdateShift_NoAccess", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Dear User ,Shift not found.
+        /// </summary>
+        internal static string sShift_UpdateShift_ShiftNotFound {
+            get {
+                return ResourceManager.GetString("sShift_UpdateShift_ShiftNotFound", resourceCulture);
+            }
+        }
     }
 }

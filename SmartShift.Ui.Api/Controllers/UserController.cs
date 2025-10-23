@@ -1,5 +1,6 @@
 ﻿using SmartShift.Core.Data.Context;
 using SmartShift.Core.Model.DTOs;
+using SmartShift.Core.Model.DTOs.Users;
 using SmartShift.Core.Service.Abstraction;
 using System.Linq;
 using System.Security.Claims;

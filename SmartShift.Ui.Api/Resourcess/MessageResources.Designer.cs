@@ -113,5 +113,41 @@ namespace SmartShift.Ui.Api.Resourcess {
                 return ResourceManager.GetString("cCompany_Join_RegisterSuccess", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Dear User ,Shift Created Successfully.
+        /// </summary>
+        internal static string cShift_Create_RegisterSuccess {
+            get {
+                return ResourceManager.GetString("cShift_Create_RegisterSuccess", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Dear User ,Shift Can Not Be Deleted.
+        /// </summary>
+        internal static string cShift_Delete_CanNotDelete {
+            get {
+                return ResourceManager.GetString("cShift_Delete_CanNotDelete", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Dear User ,Shift Deleted Successfully.
+        /// </summary>
+        internal static string cShift_Delete_RegisterSuccess {
+            get {
+                return ResourceManager.GetString("cShift_Delete_RegisterSuccess", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Dear User ,Shift Updated Successfully.
+        /// </summary>
+        internal static string cShift_Update_RegisterSuccess {
+            get {
+                return ResourceManager.GetString("cShift_Update_RegisterSuccess", resourceCulture);
+            }
+        }
     }
 }

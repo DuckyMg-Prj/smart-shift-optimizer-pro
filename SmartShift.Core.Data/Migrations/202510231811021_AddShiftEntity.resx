@@ -117,42 +117,10 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Api_Common_Error" xml:space="preserve">
-    <value>エラー</value>
+  <data name="Target" xml:space="preserve">
+    <value>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</value>
   </data>
-  <data name="Api_Common_Success" xml:space="preserve">
-    <value>成功</value>
-  </data>
-  <data name="cAuth_Register_Success" xml:space="preserve">
-    <value>ユーザーが正常に登録されました
-</value>
-  </data>
-  <data name="cCompany_GetCurrent_CompanyCreated" xml:space="preserve">
-    <value>ユーザー様、会社が正常に作成されました
-</value>
-  </data>
-  <data name="cCompany_Join_InvalidInviteCode" xml:space="preserve">
-    <value>ユーザー様、招待コードは無効です
-</value>
-  </data>
-  <data name="cCompany_Join_RegisterSuccess" xml:space="preserve">
-    <value>ユーザー様、会社への参加は成功しました
-</value>
-  </data>
-  <data name="cShift_Create_RegisterSuccess" xml:space="preserve">
-    <value>ユーザー様、シフトが正常に作成されました
-</value>
-  </data>
-  <data name="cShift_Delete_CanNotDelete" xml:space="preserve">
-    <value>ユーザー様、シフトは削除できません
-</value>
-  </data>
-  <data name="cShift_Delete_RegisterSuccess" xml:space="preserve">
-    <value>ユーザー様、シフトが正常に削除されました
-</value>
-  </data>
-  <data name="cShift_Update_RegisterSuccess" xml:space="preserve">
-    <value>ユーザー様、シフトが正常に更新されました
-</value>
+  <data name="DefaultSchema" xml:space="preserve">
+    <value>dbo</value>
   </data>
 </root>

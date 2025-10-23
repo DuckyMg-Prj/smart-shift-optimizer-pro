@@ -3,6 +3,7 @@ using Microsoft.IdentityModel.Tokens;
 using SmartShift.Core.Data.Context;
 using SmartShift.Core.Model;
 using SmartShift.Core.Model.DTOs;
+using SmartShift.Core.Model.DTOs.Users;
 using SmartShift.Core.Model.Entities;
 using SmartShift.Core.Model.Enums;
 using SmartShift.Core.Model.Source;
@@ -15,7 +16,7 @@ using System.Linq;
 using System.Security.Claims;
 using System.Text;
 
-namespace SmartShift.Core.Service
+namespace SmartShift.Core.Service.Login
 {
     public class AuthService : IAuthService
     {
