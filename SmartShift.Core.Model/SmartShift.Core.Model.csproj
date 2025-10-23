@@ -41,6 +41,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DTOs\TokenRequest.cs" />
+    <Compile Include="RefreshToken.cs" />
     <Compile Include="CompanyModel.cs" />
     <Compile Include="DTOs\LoginDto.cs" />
     <Compile Include="ExceptionLevel.cs" />

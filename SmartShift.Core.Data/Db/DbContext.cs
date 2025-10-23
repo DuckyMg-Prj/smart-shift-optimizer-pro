@@ -10,6 +10,8 @@ namespace SmartShift.Core.Data.Context
         public DbSet<UserModel> UserModel { get; set; }
         public DbSet<CompanyModel> CompanyModel { get; set; }
 
+        public DbSet<RefreshToken> RefreshTokens { get; set; }
+
         // other DbSet<> will come later
     }
 }

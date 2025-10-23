@@ -14,6 +14,10 @@ namespace SmartShift.Ui.Api
         protected void Application_BeginRequest(object sender, EventArgs e)
         {
             var langHeader = HttpContext.Current.Request.Headers["Accept-Language"];
+            HttpContext.Current.Response.Headers["X-Content-Type-Options"] = "nosniff";
+            HttpContext.Current.Response.Headers["X-Frame-Options"] = "DENY";
+            HttpContext.Current.Response.Headers["Referrer-Policy"] = "no-referrer";
+            HttpContext.Current.Response.Headers["Content-Security-Policy"] = "default-src 'self'; script-src 'self'; object-src 'none';";
             if (!string.IsNullOrEmpty(langHeader))
             {
                 try

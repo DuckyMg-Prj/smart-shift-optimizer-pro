@@ -7,5 +7,10 @@ namespace SmartShift.Core.Service.Abstraction
     {
         UserModel Register(RegisterDto dto);
         string Login(LoginDto dto);
+        UserModel ValidateCredentials(string email, string password);
+        string GenerateJwtToken(UserModel user);
+        RefreshToken CreateRefreshToken(int userId);
+        RefreshToken ValidateRefreshToken(string refreshToken);
+        RefreshToken RotateRefreshToken(RefreshToken oldToken, string clientId);
     }
 }

@@ -13,5 +13,8 @@ namespace SmartShift.Core.Model.Entities
         public string PasswordHash { get; set; }
         public int? MaxHoursPerWeek { get; set; }
         public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
+        public int FailedLoginCount { get; set; } = 0;
+        public DateTime? LockoutEndUtc { get; set; } = null;
+        public DateTime? LastFailedLoginUtc { get; set; }
     }
 }

@@ -21,16 +21,107 @@ namespace SmartShift.Core.Service
     {
         private readonly Lazy<AppDbContext> _db;
         private readonly string _jwtSecret = "kA93@x2!pZ8rG1hFq6nVbT4uW9eLcY7z"; //config
+        ///private readonly int _jwtExpireDays = int.Parse(ConfigurationManager.AppSettings["JwtExpireDays"]);
 
         public AuthService(Lazy<AppDbContext> db)
         {
             _db = db;
         }
         private AppDbContext db => _db.Value;
+        public string GenerateJwtToken(UserModel user)
+        {
+            var key = Encoding.ASCII.GetBytes(_jwtSecret);
+            var tokenHandler = new JwtSecurityTokenHandler();
+
+            var tokenDescriptor = new SecurityTokenDescriptor
+            {
+                Subject = new ClaimsIdentity(new[]
+                {
+                new Claim("id", user.Id.ToString()),
+                new Claim("role", user.Role.ToString())
+            }),
+
+                Expires = DateTime.UtcNow.AddMinutes(30) ,
+                SigningCredentials = new SigningCredentials(
+                    new SymmetricSecurityKey(key),
+                    SecurityAlgorithms.HmacSha256Signature)
+            };
+
+            var token = tokenHandler.CreateToken(tokenDescriptor);
+            return tokenHandler.WriteToken(token);
+        }
+
+        public RefreshToken CreateRefreshToken(int userId)
+        {
+            var token = Convert.ToBase64String(Guid.NewGuid().ToByteArray());
+            var refresh = new RefreshToken
+            {
+                Token = token,
+                UserId = userId,
+                ExpiresAt = DateTime.UtcNow.AddMinutes(30)
+            };
+
+            db.RefreshTokens.Add(refresh);
+            db.SaveChanges();
+            return refresh;
+        }
+
+        public RefreshToken ValidateRefreshToken(string token)
+        {
+            var refresh = db.RefreshTokens
+                .SingleOrDefault(r => r.Token == token && r.RevokedAt == null);
+
+            if (refresh == null || refresh.ExpiresAt < DateTime.UtcNow)
+                return null;
+
+            return refresh;
+        }
+
+        public RefreshToken RotateRefreshToken(RefreshToken old, string clientId)
+        {
+            old.RevokedAt = DateTime.UtcNow;
+            var newRefresh = CreateRefreshToken(old.UserId);
+            old.ReplacedByToken = newRefresh.Token;
+            db.SaveChanges();
+            return newRefresh;
+        }
+        public UserModel ValidateCredentials(string email, string password)
+        {
+            var user = db.UserModel.SingleOrDefault(u => u.Email == email);
+            if (user == null)
+            {
+                throw new CustomException(ExepetionResource.sAuthService_Login_EmailNotExist, ExceptionLevel.Warning);
+            }
+
+            if (user.LockoutEndUtc.HasValue && user.LockoutEndUtc.Value > DateTime.UtcNow)
+                throw new CustomException($"Account locked until {user.LockoutEndUtc.Value:u}", ExceptionLevel.Warning);
+
+            if (!BCrypt.Net.BCrypt.Verify(password, user.PasswordHash, true, HashType.SHA256))
+            {
+                user.FailedLoginCount++;
+                user.LastFailedLoginUtc = DateTime.UtcNow;
+                if (user.FailedLoginCount >= 3)
+                {
+                    user.LockoutEndUtc = DateTime.UtcNow.AddMinutes(15);
+                    // optionally log an event / send email
+                }
+                db.SaveChanges();
+
+                throw new CustomException(ExepetionResource.sAuthService_Login_PasswordIsIncorrect, ExceptionLevel.Warning);
+            }
+            // success:
+            user.FailedLoginCount = 0;
+            user.LockoutEndUtc = null;
+            db.SaveChanges();
+            return user;
+        }
+
         public UserModel Register(RegisterDto dto)
         {
             var query = from x in db.UserModel
                         select x;
+
+
             if (query != null && query.Any(u => u.Email == dto.Email))
             {
                 throw new CustomException(ExepetionResource.sAuthService_Register_EmailAlreadyExists, ExceptionLevel.Warning);
@@ -79,28 +170,23 @@ namespace SmartShift.Core.Service
 
         public string Login(LoginDto dto)
         {
-            var user = db.UserModel.FirstOrDefault(u => u.Email == dto.Email);
-            if (user == null)
-            {
-                throw new CustomException(ExepetionResource.sAuthService_Login_EmailNotExist, ExceptionLevel.Warning);
-            }
-            if (!BCrypt.Net.BCrypt.Verify(dto.Password, user.PasswordHash,true,HashType.SHA256))
-            {
-                throw new CustomException(ExepetionResource.sAuthService_Login_PasswordIsIncorrect, ExceptionLevel.Warning);
-            }
 
-            var tokenHandler = new JwtSecurityTokenHandler();
+            var user = ValidateCredentials(dto.Email, dto.Password);
+
             var key = Encoding.ASCII.GetBytes(_jwtSecret);
+            var tokenHandler = new JwtSecurityTokenHandler();
 
             var tokenDescriptor = new SecurityTokenDescriptor
             {
                 Subject = new ClaimsIdentity(new[]
                 {
-                    new Claim("id", user.Id.ToString()),
-                    new Claim("role", user.Role.ToString())
-                }),
-                Expires = DateTime.UtcNow.AddMinutes(20),
-                SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key),
+                new Claim("id", user.Id.ToString()),
+                new Claim("role", user.Role.ToString())
+            }),
+
+                Expires = DateTime.UtcNow.AddDays(1),
+                SigningCredentials = new SigningCredentials(
+                    new SymmetricSecurityKey(key),
                     SecurityAlgorithms.HmacSha256Signature)
             };
 
