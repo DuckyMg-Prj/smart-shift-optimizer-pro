@@ -41,6 +41,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DTOs\UserProfileDto.cs" />
+    <Compile Include="DTOs\CompanyJoinDto.cs" />
+    <Compile Include="DTOs\CompanyDto.cs" />
+    <Compile Include="DTOs\CompanyCreateDto.cs" />
     <Compile Include="DTOs\TokenRequest.cs" />
     <Compile Include="RefreshToken.cs" />
     <Compile Include="CompanyModel.cs" />

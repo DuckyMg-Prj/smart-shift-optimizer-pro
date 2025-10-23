@@ -1,5 +1,6 @@
 ﻿using SmartShift.Core.Data.Context;
 using SmartShift.Core.Service.Abstraction;
+using System.ComponentModel;
 using Unity;
 using Unity.Lifetime;
 
@@ -24,10 +25,8 @@ namespace SmartShift.Core.Service
             // Register dependencies here
             _container.RegisterType<AppDbContext, AppDbContext>(new HierarchicalLifetimeManager());
             _container.RegisterType<IAuthService, AuthService>(new HierarchicalLifetimeManager());
+            _container.RegisterType<ICompanyService, CompanyService>(new HierarchicalLifetimeManager());
 
-            // Future services:
-            // _container.RegisterType<ICompanyService, CompanyService>();
-            // _container.RegisterType<IShiftService, ShiftService>();
         }
     }
 }

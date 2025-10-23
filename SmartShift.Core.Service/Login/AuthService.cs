@@ -90,7 +90,7 @@ namespace SmartShift.Core.Service
             var user = db.UserModel.SingleOrDefault(u => u.Email == email);
             if (user == null)
             {
-                throw new CustomException(ExepetionResource.sAuthService_Login_EmailNotExist, ExceptionLevel.Warning);
+                throw new CustomException(ExceptionResources.sAuthService_Login_EmailNotExist, ExceptionLevel.Warning);
             }
 
             if (user.LockoutEndUtc.HasValue && user.LockoutEndUtc.Value > DateTime.UtcNow)
@@ -107,7 +107,7 @@ namespace SmartShift.Core.Service
                 }
                 db.SaveChanges();
 
-                throw new CustomException(ExepetionResource.sAuthService_Login_PasswordIsIncorrect, ExceptionLevel.Warning);
+                throw new CustomException(ExceptionResources.sAuthService_Login_PasswordIsIncorrect, ExceptionLevel.Warning);
             }
             // success:
             user.FailedLoginCount = 0;
@@ -124,13 +124,13 @@ namespace SmartShift.Core.Service
 
             if (query != null && query.Any(u => u.Email == dto.Email))
             {
-                throw new CustomException(ExepetionResource.sAuthService_Register_EmailAlreadyExists, ExceptionLevel.Warning);
+                throw new CustomException(ExceptionResources.sAuthService_Register_EmailAlreadyExists, ExceptionLevel.Warning);
             }
 
 
             if (dto.Role == RoleTypeKind.None)
             {
-                throw new CustomException(ExepetionResource.sAuthService_Register_InvalidUserRole, ExceptionLevel.Error);
+                throw new CustomException(ExceptionResources.sAuthService_Register_InvalidUserRole, ExceptionLevel.Error);
             }
 
             var hashed = BCrypt.Net.BCrypt.EnhancedHashPassword(dto.Password, HashType.SHA256);

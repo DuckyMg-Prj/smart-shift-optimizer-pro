@@ -66,11 +66,11 @@ namespace SmartShift.Ui.Api.Controllers
             try
             {
                 var user = authService.Register(dto);
-                return Ok(new { Level = MessegeResource.Api_Common_Success, message = MessegeResource.sAuth_Register_Success, user.Email });
+                return Ok(new { Level = MessageResources.Api_Common_Success, message = MessageResources.cAuth_Register_Success, user.Email });
             }
             catch (Exception ex)
             {
-                return BadRequest(MessegeResource.Api_Common_Error + ": " + ex.Message);
+                return BadRequest(MessageResources.Api_Common_Error + ": " + ex.Message);
             }
         }
 
@@ -80,11 +80,11 @@ namespace SmartShift.Ui.Api.Controllers
             try
             {
                 var token = authService.Login(dto);
-                return Ok(new { Level = MessegeResource.Api_Common_Success, message = "Token: " + token });
+                return Ok(new { Level = MessageResources.Api_Common_Success, message = "Token: " + token });
             }
             catch (Exception ex)
             {
-                return BadRequest(MessegeResource.Api_Common_Error + ": " + ex.Message);
+                return BadRequest(MessageResources.Api_Common_Error + ": " + ex.Message);
             }
         }
     }

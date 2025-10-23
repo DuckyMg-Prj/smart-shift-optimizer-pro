@@ -56,6 +56,14 @@
     <Compile Include="Migrations\202510221924328_InitialCreate.Designer.cs">
       <DependentUpon>202510221924328_InitialCreate.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202510231543350_AddCompanyInviteCode.cs" />
+    <Compile Include="Migrations\202510231543350_AddCompanyInviteCode.Designer.cs">
+      <DependentUpon>202510231543350_AddCompanyInviteCode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202510231555574_Day3Company.cs" />
+    <Compile Include="Migrations\202510231555574_Day3Company.Designer.cs">
+      <DependentUpon>202510231555574_Day3Company.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -72,6 +80,12 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202510221924328_InitialCreate.resx">
       <DependentUpon>202510221924328_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202510231543350_AddCompanyInviteCode.resx">
+      <DependentUpon>202510231543350_AddCompanyInviteCode.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202510231555574_Day3Company.resx">
+      <DependentUpon>202510231555574_Day3Company.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
