@@ -11,6 +11,7 @@ namespace SmartShift.Ui.Api
         {
             config.MessageHandlers.Add(new IpRateLimitHandler());
             config.MessageHandlers.Add(new XssProtectionHandler());
+            config.MessageHandlers.Add(new LanguageHandler());
 
             // existing routes/config
             config.MapHttpAttributeRoutes();

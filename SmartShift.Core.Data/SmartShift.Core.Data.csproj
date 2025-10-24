@@ -68,6 +68,10 @@
     <Compile Include="Migrations\202510231811021_AddShiftEntity.Designer.cs">
       <DependentUpon>202510231811021_AddShiftEntity.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202510231940410_AddShiftAssignments.cs" />
+    <Compile Include="Migrations\202510231940410_AddShiftAssignments.Designer.cs">
+      <DependentUpon>202510231940410_AddShiftAssignments.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -93,6 +97,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202510231811021_AddShiftEntity.resx">
       <DependentUpon>202510231811021_AddShiftEntity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202510231940410_AddShiftAssignments.resx">
+      <DependentUpon>202510231940410_AddShiftAssignments.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

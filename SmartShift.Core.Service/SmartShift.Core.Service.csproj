@@ -128,6 +128,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ExceptionResources.Ja.resx</DependentUpon>
     </Compile>
+    <Compile Include="Shift\ShiftRequestService .cs" />
+    <Compile Include="Shift\ShiftAssignmentService .cs" />
+    <Compile Include="Shift\ShiftReportService .cs" />
     <Compile Include="Shift\ShiftService.cs" />
     <Compile Include="UnityConfig.cs" />
   </ItemGroup>

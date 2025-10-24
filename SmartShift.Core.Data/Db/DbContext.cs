@@ -12,6 +12,8 @@ namespace SmartShift.Core.Data.Context
 
         public DbSet<RefreshToken> RefreshTokens { get; set; }
         public DbSet<Shift> Shifts { get; set; }
+        public DbSet<ShiftAssignment> ShiftAssignments { get; set; }
+        public DbSet<ShiftRequest> ShiftRequests { get; set; }
 
     }
 }

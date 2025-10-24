@@ -41,6 +41,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DTOs\Reports\EmployeeReportDto.cs" />
+    <Compile Include="DTOs\Reports\CompanyReportDto.cs" />
+    <Compile Include="DTOs\Users\Shift\ShiftAssignmentDto.cs" />
+    <Compile Include="DTOs\Users\Shift\ShiftRequestDto.cs" />
+    <Compile Include="DTOs\Users\Shift\ShiftRequestCreateDto.cs" />
+    <Compile Include="DTOs\Users\Shift\ShiftSummaryDto.cs" />
     <Compile Include="DTOs\Users\Shift\ShiftDto.cs" />
     <Compile Include="DTOs\Users\Shift\ShiftQueryDto.cs" />
     <Compile Include="DTOs\Users\Shift\ShiftUpdateDto.cs" />
@@ -50,6 +56,8 @@
     <Compile Include="DTOs\Company\CompanyDto.cs" />
     <Compile Include="DTOs\Company\CompanyCreateDto.cs" />
     <Compile Include="DTOs\TokenRequest.cs" />
+    <Compile Include="Entities\ShiftRequest.cs" />
+    <Compile Include="Entities\ShiftAssignment.cs" />
     <Compile Include="Entities\Shift.cs" />
     <Compile Include="Entities\RefreshToken.cs" />
     <Compile Include="Entities\CompanyModel.cs" />

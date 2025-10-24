@@ -41,6 +41,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Interface\IShiftRequestService.cs" />
+    <Compile Include="Interface\IShiftAssignmentService.cs" />
+    <Compile Include="Interface\IShiftReportService.cs" />
     <Compile Include="Interface\IShiftService.cs" />
     <Compile Include="Interface\ICompanyService.cs" />
     <Compile Include="Interface\IAuthService.cs" />
