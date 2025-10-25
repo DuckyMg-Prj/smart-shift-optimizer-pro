@@ -30,7 +30,7 @@ namespace SmartShift.Ui.Api
                 }
                 catch
                 {
-                    // ignore invalid culture values and keep default
+                    
                 }
             }
         }
@@ -43,6 +43,8 @@ namespace SmartShift.Ui.Api
 
             // set resolver for Web API
             GlobalConfiguration.Configuration.DependencyResolver = new UnityDependencyResolver(container);
+
+
         }
     }
 
